@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drag &amp; Drop</title>
+	<style type="text/css">
+	body {
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table tr td,
+table tr th {
+  border: 1px solid #999;
+  width: 12.5%;
+  vertical-align: top;
+}
+
+table td span {
+  display: block;
+  text-align: center;
+  transition: all 0.5s linear;
+}
+</style>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+  integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"
+  integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+  crossorigin="anonymous"></script>
+</head>
+<body>
+	<table id="tblTrailer" class="table table-bordered mrg-0 resource-table">
+  <thead>
+    <tr>
+      <th>Resources</th>
+      <th>Sep 1</th>
+      <th>Sep 2</th>
+      <th>Sep 3</th>
+      <th>Sep 4</th>
+      <th>Sep 5</th>
+      <th>Sep 6</th>
+      <th>Sep 7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Trailer</td>
+      <td>
+        <span class="trailer">TRI-001</span>
+        <span class="trailer">TRI-101</span>
+      </td>
+      <td>
+        <span class="trailer">TRI-102</span>
+        <span class="trailer">TRI-202</span>
+      </td>
+      <td><span class="trailer">TRI-003</span></td>
+      <td>
+        <span class="trailer">TRI-004</span>
+        <span class="trailer">TRI-104</span>
+      </td>
+      <td>
+        <span class="trailer">TRI-005</span>
+        <span class="trailer">TRI-105</span>
+      </td>
+      <td><span class="trailer">TRI-006</span></td>
+      <td>
+        <span class="trailer">TRI-007</span>
+        <span class="trailer">TRI-107</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Prime Movers</td>
+      <td><span class="prime">PMS-001</span></td>
+      <td>
+        <span class="prime">PMS-002</span>
+        <span class="prime">PMS-102</span>
+        <span class="prime">PMS-202</span>
+      </td>
+      <td>
+        <span class="prime">PMS-003</span>
+        <span class="prime">PMS-103</span>
+      </td>
+      <td><span class="prime">PMS-004</span></td>
+      <td>
+        <span class="prime">PMS-005</span>
+        <span class="prime">PMS-105</span>
+      </td>
+      <td><span class="prime">PMS-006</span></td>
+      <td>
+        <span class="prime">PMS-007</span>
+        <span class="prime">PMS-107</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Drivers</td>
+      <td><span class="driver">DRV-001</span></td>
+      <td>
+        <span class="driver">DRV-002</span>
+        <span class="driver">DRV-102</span>
+      </td>
+      <td>
+        <span class="driver">DRV-003</span>
+        <span class="driver">DRV-103</span>
+      </td>
+      <td>
+        <span class="driver">DRV-004</span>
+        <span class="driver">DRV-104</span>
+      </td>
+      <td><span class="driver">DRV-005</span></td>
+      <td>
+        <span class="driver">DRV-006</span>
+        <span class="driver">DRV-106</span>
+      </td>
+      <td>
+        <span class="driver">DRV-007</span>
+        <span class="driver">DRV-107</span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br />
+<table id="tblTrailerBooking" class="table table-bordered mrg-0 resource-table">
+  <thead>
+    <tr>
+      <th>Booking No.</th>
+      <th>Sep 1</th>
+      <th>Sep 2</th>
+      <th>Sep 3</th>
+      <th>Sep 4</th>
+      <th>Sep 5</th>
+      <th>Sep 6</th>
+      <th>Sep 7</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>B0001</td>
+      <td>
+        <span class="trailer">TRI-201</span>
+        <span class="prime">PMS-101</span>
+      </td>
+      <td>
+        <span class="trailer">TRI-002</span>
+        <span class="prime">PMS-302</span>
+        <span class="driver">DRV-102</span>
+      </td>
+      <td></td>
+      <td><span class="prime">PMS-304</span></td>
+      <td></td>
+      <td><span class="driver">DRV-006</span></td>
+      <td><span class="trailer">TRI-007</span></td>
+    </tr>
+    <tr>
+      <td>B0002</td>
+      <td>
+        <span class="trailer">TRI-201</span>
+        <span class="prime">PMS-101</span>
+      </td>
+      <td>
+        <span class="trailer">TRI-002</span>
+        <span class="prime">PMS-302</span>
+        <span class="driver">DRV-102</span>
+      </td>
+      <td></td>
+      <td><span class="prime">PMS-304</span></td>
+      <td><span class="driver">DRV-005</span></td>
+      <td></td>
+      <td><span class="trailer">TRI-007</span></td>
+    </tr>
+    <tr>
+      <td>B0003</td>
+      <td>
+        <span class="trailer">TRI-201</span>
+        <span>PMS-101</span>
+      </td>
+      <td>
+        <span class="trailer">TRI-002</span>
+        <span class="prime">PMS-302</span>
+        <span class="trailer">DRV-102</span>
+      </td>
+      <td><span class="driver">PMS-303</span></td>
+      <td></td>
+      <td></td>
+      <td><span class="driver">DRV-006</span></td>
+      <td><span class="trailer">TRI-007</span></td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+<script type="text/javascript">
+	 $(document).ready(function() {
+      var colIndex;
+      $('#tblTrailer td span').draggable({
+        revert: "invalid",
+        zIndex: 100,
+        start: function(event, ui) {
+          var foo = $(ui.helper).parent(); // should return td
+          colIndex = foo.index();
+          $(ui.helper).css({
+            padding: "2.5px 5px",
+            border: "1px solid #ddd",
+            background: "#f2f2f2"
+          });
+          //console.log(ind);
+        }
+      });
+      $('#tblTrailerBooking tr td').droppable({
+        accept: "#tblTrailer td span",
+        activeClass: "ui-state-highlight",
+        drop: function(ev, ui) {
+          var foo = $(ev.target); // should return td
+          var spanCount = foo.find('span').length;
+         
+          var myColInd = foo.index();
+          if (myColInd === colIndex) {
+
+            alert('saved in new table');
+            $(ui.draggable).detach().css({
+              top: 'auto',
+              left: 'auto',
+              background: '#f3f3f3'
+            }).appendTo(this);
+
+          } else {
+            $(ui.draggable).draggable('option', 'revert', true);
+            return false;
+          }
+        }
+      });
+    });
+
+</script>
+</html>
